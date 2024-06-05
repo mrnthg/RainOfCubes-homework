@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class PlatformChecker : MonoBehaviour
 {
-    public event Action<Cube> OnCollision;
+    private Cube _cube;
 
-    private Cube cube;
+    public event Action<Cube> OnCollision;
 
     private void Start()
     {
-        cube = GetComponent<Cube>();
+        _cube = GetComponent<Cube>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out Platform platform))
         {        
-            if (!cube.isDestroyProcess)
+            if (_cube.IsDestroyProcess == false)
             {
-                cube.ChangeColor();
-                OnCollision?.Invoke(cube);
-                cube.ÑhangeDestroyStatus(true);
+                _cube.ChangeColor();
+                OnCollision?.Invoke(_cube);
+                _cube.ÑhangeDestroyStatus(true);
 
                 StartCoroutine(DestroyCube());
             }
@@ -30,8 +30,8 @@ public class PlatformChecker : MonoBehaviour
 
     private IEnumerator DestroyCube()
     {
-        yield return new WaitForSecondsRealtime(cube.GetTimeLifecycle());
+        yield return new WaitForSecondsRealtime(_cube.GetTimeLifecycle());
 
-        cube.OnRemove(cube);
+        _cube.OnRemove();
     }
 }

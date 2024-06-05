@@ -5,22 +5,24 @@ public class Cube : MonoBehaviour
 {
     [SerializeField] private Material _startMaterial;
 
-    public event Action<Cube> cubeRemove;
-
+    private Cube cube;
     private int _minTimeLifecycle = 2;
     private int _maxTimeLifecycle = 6;
     private bool _isDestroyProcess = false;
 
-    public bool isDestroyProcess => _isDestroyProcess;
+    public event Action<Cube> cubeRemove;
+
+    public bool IsDestroyProcess => _isDestroyProcess;   
 
     private void Awake()
     {
+        cube = GetComponent<Cube>();
         SetStartMaterial();
     }
 
-    public void OnRemove(Cube cube)
+    public void OnRemove()
     {
-        cubeRemove?.Invoke(cube);
+        cubeRemove?.Invoke(this);
     }
 
     public int GetTimeLifecycle() => UnityEngine.Random.Range(_minTimeLifecycle, _maxTimeLifecycle);
@@ -37,6 +39,6 @@ public class Cube : MonoBehaviour
 
     public void ChangeColor()
     {
-        this.GetComponent<MaterialPool>().SetMaterial(this);
+        GetComponent<MaterialPool>().SetMaterial(cube);
     }
 }
