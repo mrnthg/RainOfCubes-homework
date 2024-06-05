@@ -362,7 +362,6 @@
 -analyzer:"C:/Program Files/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Cube.cs"
-"Assets/Scripts/EventManager.cs"
 "Assets/Scripts/MaterialPool.cs"
 "Assets/Scripts/Platform.cs"
 "Assets/Scripts/PlatformChecker.cs"

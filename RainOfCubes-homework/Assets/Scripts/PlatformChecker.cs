@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class PlatformChecker : MonoBehaviour
 {
+    public event Action<Cube> OnCollision;
+
     private Cube cube;
-    private bool _isDestroyProcess = false;
 
     private void Start()
     {
@@ -15,19 +17,21 @@ public class PlatformChecker : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Platform platform))
         {        
-            if (!_isDestroyProcess)
+            if (!cube.isDestroyProcess)
             {
-                _isDestroyProcess = true;
-                EventManager.OnCollision(gameObject.GetComponent<Cube>());
+                cube.ChangeColor();
+                OnCollision?.Invoke(cube);
+                cube.ÑhangeDestroyStatus(true);
+
                 StartCoroutine(DestroyCube());
             }
         }
     }
 
     private IEnumerator DestroyCube()
-    {    
+    {
         yield return new WaitForSecondsRealtime(cube.GetTimeLifecycle());
 
-        EventManager.OnRemove(cube);
+        cube.OnRemove(cube);
     }
 }

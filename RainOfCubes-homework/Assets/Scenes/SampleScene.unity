@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd944b641ae0bf84bb0b71edf75a2df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefabCube: {fileID: 6209275285244920503, guid: 01b192d4b72a7314bbcc84e772eb95d6, type: 3}
   _materials:
   - {fileID: 2100000, guid: 53e03811d811b4b41bfe66c3e25f035a, type: 2}
   - {fileID: 2100000, guid: 6d09b441585b7a9418c6abfd6f3b89e0, type: 2}
