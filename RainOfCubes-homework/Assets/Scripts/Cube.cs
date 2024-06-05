@@ -5,7 +5,9 @@ public class Cube : MonoBehaviour
 {
     [SerializeField] private Material _startMaterial;
 
-    private Cube cube;
+    private Cube _cube;
+    private MeshRenderer _meshRenderer;
+    private MaterialPool _materialPool;
     private int _minTimeLifecycle = 2;
     private int _maxTimeLifecycle = 6;
     private bool _isDestroyProcess = false;
@@ -16,7 +18,9 @@ public class Cube : MonoBehaviour
 
     private void Awake()
     {
-        cube = GetComponent<Cube>();
+        _meshRenderer = GetComponent<MeshRenderer>();
+        _materialPool = GetComponent<MaterialPool>();
+        _cube = GetComponent<Cube>();
         SetStartMaterial();
     }
 
@@ -29,7 +33,7 @@ public class Cube : MonoBehaviour
 
     public void SetStartMaterial()
     {
-        gameObject.GetComponent<MeshRenderer>().material = _startMaterial;
+        _meshRenderer.material = _startMaterial;
     }
 
     public void ÑhangeDestroyStatus(bool isDestroy)
@@ -39,6 +43,6 @@ public class Cube : MonoBehaviour
 
     public void ChangeColor()
     {
-        GetComponent<MaterialPool>().SetMaterial(cube);
+        _materialPool.SetMaterial(_cube);
     }
 }

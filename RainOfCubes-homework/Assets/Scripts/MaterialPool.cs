@@ -9,7 +9,7 @@ public class MaterialPool : MonoBehaviour
     {
         if (cube.TryGetComponent(out MeshRenderer material))
         {
-            cube.GetComponent<MeshRenderer>().material = _materials[RandomNumber()];
+            material.material = _materials[RandomNumber()];
         }
     }
 

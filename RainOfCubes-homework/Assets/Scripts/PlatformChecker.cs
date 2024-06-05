@@ -20,7 +20,6 @@ public class PlatformChecker : MonoBehaviour
             if (_cube.IsDestroyProcess == false)
             {
                 _cube.ChangeColor();
-                OnCollision?.Invoke(_cube);
                 _cube.ÑhangeDestroyStatus(true);
 
                 StartCoroutine(DestroyCube());
