@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9120840842997226251}
   - component: {fileID: 9158190698306472923}
   - component: {fileID: 1108520235258705887}
-  - component: {fileID: 3723405377645049301}
+  - component: {fileID: 6209275285244920503}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -147,8 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07df799862af94a4fa4b8e71a3d9542d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material: {fileID: 3723405377645049301}
---- !u!114 &3723405377645049301
+  _material: {fileID: 0}
+  _maskGround:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &6209275285244920503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,10 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2748626672083376788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd944b641ae0bf84bb0b71edf75a2df6, type: 3}
+  m_Script: {fileID: 11500000, guid: ce5fc80a905e9ba4ebcb3f0a1cf61e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _materials:
-  - {fileID: 2100000, guid: 99dc7ae2f5ad89b4cabdc304736af910, type: 2}
-  - {fileID: 2100000, guid: 6d09b441585b7a9418c6abfd6f3b89e0, type: 2}
-  - {fileID: 2100000, guid: 53e03811d811b4b41bfe66c3e25f035a, type: 2}
+  _startMaterial: {fileID: 2100000, guid: a28d81eab14933e4fb4791aa7953d536, type: 2}

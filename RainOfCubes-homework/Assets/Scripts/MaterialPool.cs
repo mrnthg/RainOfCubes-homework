@@ -5,13 +5,23 @@ public class MaterialPool : MonoBehaviour
 {
     [SerializeField] private List<Material> _materials = new List<Material>();
 
-    public Material GetMaterial()
+    private void OnEnable()
     {
-        Material material;
-
-        material = _materials[RandomCountMaterial()];
-        return material;
+        EventManager.cubeCollision += SetMaterial;
     }
 
-    private int RandomCountMaterial() => Random.Range(0, _materials.Count);
+    private void OnDisable()
+    {
+        EventManager.cubeCollision -= SetMaterial;
+    }
+
+    private void SetMaterial(Cube cube)
+    {
+        if (cube.TryGetComponent(out MeshRenderer material))
+        {
+            material.material = _materials[RandomNumber()];
+        }
+    }
+
+    private int RandomNumber() => Random.Range(0, _materials.Count);
 }
