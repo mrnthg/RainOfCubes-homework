@@ -5,7 +5,6 @@ public class Cube : MonoBehaviour
 {
     [SerializeField] private Material _startMaterial;
 
-    private Cube _cube;
     private MeshRenderer _meshRenderer;
     private MaterialPool _materialPool;
     private int _minTimeLifecycle = 2;
@@ -20,7 +19,6 @@ public class Cube : MonoBehaviour
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _materialPool = GetComponent<MaterialPool>();
-        _cube = GetComponent<Cube>();
         SetStartMaterial();
     }
 
@@ -43,6 +41,6 @@ public class Cube : MonoBehaviour
 
     public void ChangeColor()
     {
-        _materialPool.SetMaterial(_cube);
+        _materialPool.SetMaterial(this);
     }
 }
