@@ -34,9 +34,14 @@ public class Cube : MonoBehaviour
         _meshRenderer.material = _startMaterial;
     }
 
-    public void ÑhangeDestroyStatus(bool isDestroy)
+    public void StartDestroyStatus()
     {
-        _isDestroyProcess = isDestroy;
+        _isDestroyProcess = true;
+    }
+
+    public void StopDestroyStatus()
+    {
+        _isDestroyProcess = false;
     }
 
     public void ChangeColor()

@@ -6,8 +6,6 @@ public class PlatformChecker : MonoBehaviour
 {
     private Cube _cube;
 
-    public event Action<Cube> OnCollision;
-
     private void Start()
     {
         _cube = GetComponent<Cube>();
@@ -20,7 +18,7 @@ public class PlatformChecker : MonoBehaviour
             if (_cube.IsDestroyProcess == false)
             {
                 _cube.ChangeColor();
-                _cube.ÑhangeDestroyStatus(true);
+                _cube.StartDestroyStatus();
 
                 StartCoroutine(DestroyCube());
             }

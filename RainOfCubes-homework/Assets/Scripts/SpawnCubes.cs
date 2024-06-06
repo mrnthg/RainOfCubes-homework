@@ -40,7 +40,7 @@ public class SpawnCubes : MonoBehaviour
     {
         cube.gameObject.SetActive(false);
         cube.SetStartMaterial();
-        cube.ÑhangeDestroyStatus(false);
+        cube.StopDestroyStatus();
     }
 
     private void ActionOnGet(Cube cube)
