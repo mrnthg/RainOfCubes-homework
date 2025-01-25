@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Cube : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Cube : MonoBehaviour
         cubeRemove?.Invoke(this);
     }
 
-    public int GetTimeLifecycle() => UnityEngine.Random.Range(_minTimeLifecycle, _maxTimeLifecycle);
+    public int GetTimeLifecycle() => Random.Range(_minTimeLifecycle, _maxTimeLifecycle);
 
     public void SetStartMaterial()
     {
