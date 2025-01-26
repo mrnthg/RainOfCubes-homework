@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour
     private MeshRenderer _meshRenderer;
     private float _lifecycleTime;
 
-    public event Action<Bomb> bombRemove;
+    public event Action<Bomb> BombRemoved;
 
     private void OnEnable()
     {
@@ -73,7 +73,7 @@ public class Bomb : MonoBehaviour
 
     private void OnRemove()
     {
-        bombRemove?.Invoke(this);
+        BombRemoved?.Invoke(this);
     }
 
     private int GetTimeLifecycle() => Random.Range(_minTimeLifecycle, _maxTimeLifecycle);

@@ -27,7 +27,7 @@ public class SpawnCubes : MonoBehaviour
     {
         Cube newCube = Instantiate(_cubePrefab);
         newCube.transform.SetParent(transform);
-        newCube.cubeRemove += RemoveCube;
+        newCube.CubeRemoved += RemoveCube;
         return newCube;
     }
 

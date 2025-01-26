@@ -5,7 +5,7 @@ public class PlatformChecker : MonoBehaviour
 {
     private Cube _cube;
 
-    private void Start()
+    private void Awake()
     {
         _cube = GetComponent<Cube>();
     }

@@ -12,7 +12,7 @@ public class Cube : MonoBehaviour
     private int _maxTimeLifecycle = 6;
     private bool _isDestroyProcess = false;
 
-    public event Action<Cube> cubeRemove;
+    public event Action<Cube> CubeRemoved;
 
     public bool IsDestroyProcess => _isDestroyProcess;   
 
@@ -25,7 +25,7 @@ public class Cube : MonoBehaviour
 
     public void OnRemove()
     {
-        cubeRemove?.Invoke(this);
+        CubeRemoved?.Invoke(this);
     }
 
     public int GetTimeLifecycle() => Random.Range(_minTimeLifecycle, _maxTimeLifecycle);
