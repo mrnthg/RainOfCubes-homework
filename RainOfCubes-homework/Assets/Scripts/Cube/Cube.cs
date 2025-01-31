@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Cube : MonoBehaviour
+public class Cube : PoolableObject
 {
     [SerializeField] private Material _startMaterial;
 

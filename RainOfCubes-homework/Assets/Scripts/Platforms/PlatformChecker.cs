@@ -4,10 +4,12 @@ using UnityEngine;
 public class PlatformChecker : MonoBehaviour
 {
     private Cube _cube;
+    private float _lifecycleTime;
 
     private void Awake()
     {
         _cube = GetComponent<Cube>();
+        _lifecycleTime = _cube.GetTimeLifecycle();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,7 +28,7 @@ public class PlatformChecker : MonoBehaviour
 
     private IEnumerator DestroyCube()
     {
-        yield return new WaitForSecondsRealtime(_cube.GetTimeLifecycle());
+        yield return new WaitForSecondsRealtime(_lifecycleTime);
 
         _cube.OnRemove();
     }

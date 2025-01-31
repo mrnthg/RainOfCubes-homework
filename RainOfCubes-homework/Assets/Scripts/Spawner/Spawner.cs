@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 namespace Spawners
 {
-    public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class Spawner<T> : MonoBehaviour where T : PoolableObject
     {
         [SerializeField] protected T _prefab;
         

@@ -4,7 +4,7 @@ using Spawners;
 
 namespace ViewInfo
 {
-    public abstract class ViewInfo<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class ViewInfo<T> : MonoBehaviour where T : PoolableObject
     {
         private const string SpawnCount = "SpawnCount: ";
         private const string CreateCount = "CreateCount: ";
