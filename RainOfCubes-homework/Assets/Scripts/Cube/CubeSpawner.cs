@@ -21,7 +21,7 @@ public class CubeSpawner : Spawner<Cube>
         cube.gameObject.SetActive(true);
 
         cube.transform.position = _pointsSpawn[RandomPoint()].position;
-        cube.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        FixedVelocityObject(cube);
 
         cube.CubeRemoved += RemoveObject;
         cube.CubeRemoved += _bombSpawner.GetCubePosition;
@@ -38,5 +38,6 @@ public class CubeSpawner : Spawner<Cube>
         cube.CubeRemoved -= _bombSpawner.GetCubePosition;
     }
 
-    private int RandomPoint() => Random.Range(0, _pointsSpawn.Count);
+    private int RandomPoint() => 
+        Random.Range(0, _pointsSpawn.Count);
 }

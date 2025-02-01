@@ -7,15 +7,14 @@ namespace Spawners
     public abstract class Spawner<T> : MonoBehaviour where T : PoolableObject
     {
         [SerializeField] protected T _prefab;
-        
-        public event Action<T> Spawned;
 
         private ObjectPool<T> _pool;
         private int _defaultSize = 10;
         private int _maxSize = 10;
         private int _spawnCount = 0;
-        private int _countActiveObjects = 0;
-        private int _countAllObjects = 0;
+        private int _minObjectCount = 0;
+
+        public event Action<T> Spawned;
 
         private void Awake()
         {
@@ -36,20 +35,23 @@ namespace Spawners
 
         public int GetCountActiveObjects()
         {
-            _countActiveObjects = _pool.CountActive;
-            return _countActiveObjects;
+            if (_pool == null)
+                return _minObjectCount;
+
+            return _pool.CountActive;
         }
+            
 
         public int GetCountAllObjects()
         {
-            _countAllObjects = _pool.CountAll;
-            return _countAllObjects;
+            if (_pool == null)
+                return _minObjectCount;
+
+            return _pool.CountAll;
         }
 
-        public int GetSpawnCount()
-        {
-            return _spawnCount;
-        }
+        public int GetSpawnCount() => 
+            _spawnCount;
 
         protected void GetPool()
         {
@@ -61,5 +63,13 @@ namespace Spawners
         {
             _pool.Release(newObject);
         }       
+
+        protected void FixedVelocityObject(T newObject)
+        {
+            if (newObject.TryGetComponent<Rigidbody>(out Rigidbody rigidbody))
+            {
+                rigidbody.velocity = Vector3.zero;
+            }
+        }
     }
 }

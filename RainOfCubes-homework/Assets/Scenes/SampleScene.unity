@@ -593,10 +593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fc8f1c8bbfe7b41b5bbe5f900af7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: {fileID: 1177284813}
-  createCount: {fileID: 2050970633}
-  activeCount: {fileID: 187898602}
-  spawner: {fileID: 980367838}
+  _spawnCount: {fileID: 1177284813}
+  _createCount: {fileID: 2050970633}
+  _activeCount: {fileID: 187898602}
+  _spawner: {fileID: 980367838}
 --- !u!1 &420323421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,10 +1641,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee7c59ec5fa82441b0e1fba6a0467bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: {fileID: 372046381}
-  createCount: {fileID: 1926393025}
-  activeCount: {fileID: 313017766}
-  spawner: {fileID: 2095485063}
+  _spawnCount: {fileID: 372046381}
+  _createCount: {fileID: 1926393025}
+  _activeCount: {fileID: 313017766}
+  _spawner: {fileID: 2095485063}
 --- !u!1 &1864522112
 GameObject:
   m_ObjectHideFlags: 0

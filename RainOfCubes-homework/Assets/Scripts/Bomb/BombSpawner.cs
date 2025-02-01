@@ -10,7 +10,7 @@ public class BombSpawner : Spawner<Bomb>
         bomb.gameObject.SetActive(true);
 
         bomb.transform.position = _cubePosition.position;
-        bomb.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        FixedVelocityObject(bomb);
 
         bomb.BombRemoved += RemoveObject;
     }

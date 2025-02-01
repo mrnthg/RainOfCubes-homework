@@ -508,7 +508,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 24048
+  m_LastSelectedObjectID: 22992
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -588,7 +588,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts/Cube
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -596,16 +596,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts/Cube
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\ijunior\GitHub\RainOfCubes-homework\RainOfCubes-homework
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: de5d0000
-    m_LastClickedID: 24030
-    m_ExpandedIDs: 00000000e05a0000e25a0000
+    m_SelectedIDs: f65a0000
+    m_LastClickedID: 23286
+    m_ExpandedIDs: 00000000e25a0000e45a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -633,7 +633,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e05a0000e25a0000
+    m_ExpandedIDs: 00000000e25a0000e45a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -658,8 +658,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 825a0000
-    m_LastClickedInstanceID: 23170
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ee8b0000605c0000105c0000e4890000dcb40000c0bf00005270000000000000
     m_RenameOverlay:
@@ -773,9 +773,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 825a0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 28fbffff065a00006a5a0000
+      m_SelectedIDs: d0590000
+      m_LastClickedID: 22992
+      m_ExpandedIDs: 28fbffffd0590000d6590000085a0000525a00006c5a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

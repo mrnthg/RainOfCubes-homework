@@ -10,31 +10,47 @@ namespace ViewInfo
         private const string CreateCount = "CreateCount: ";
         private const string ActiveCount = "ActiveCount: ";
 
-        [SerializeField] protected Text spawnCount;
-        [SerializeField] protected Text createCount;
-        [SerializeField] protected Text activeCount;
-        [SerializeField] protected Spawner<T> spawner;
+        [SerializeField] private Text _spawnCount;
+        [SerializeField] private Text _createCount;
+        [SerializeField] private Text _activeCount;
+        [SerializeField] private Spawner<T> _spawner;
 
-        private void Update()
+        private void Awake()
         {
-            ViewSpawnCount(spawner.GetSpawnCount());
-            ViewCreateCount(spawner.GetCountAllObjects());
-            ViewActiveCount(spawner.GetCountActiveObjects());
+            UpdateInfoUI();
+            _spawner.Spawned += SpawnedNewObject;
         }
 
-        protected void ViewSpawnCount(int count)
+        private void OnDestroy()
         {
-            spawnCount.text = SpawnCount + count;
+            _spawner.Spawned -= SpawnedNewObject;
         }
 
-        protected void ViewCreateCount(int count)
+        private void UpdateInfoUI()
         {
-            createCount.text = CreateCount + count;
+            ViewSpawnCount(_spawner.GetSpawnCount());
+            ViewCreateCount(_spawner.GetCountAllObjects());
+            ViewActiveCount(_spawner.GetCountActiveObjects());
+        }       
+
+        private void SpawnedNewObject(T newObject)
+        {
+            UpdateInfoUI();
         }
 
-        protected void ViewActiveCount(int count)
+        private void ViewSpawnCount(int count)
         {
-            activeCount.text = ActiveCount + count;
+            _spawnCount.text = SpawnCount + count;
+        }
+
+        private void ViewCreateCount(int count)
+        {
+            _createCount.text = CreateCount + count;
+        }
+
+        private void ViewActiveCount(int count)
+        {
+            _activeCount.text = ActiveCount + count;
         }
     }
 }
